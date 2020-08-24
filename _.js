@@ -26,10 +26,29 @@ const _ = {
   	return isInRange;
 },
 
-	words(string) {
+  words(string) {
 		let words = string.split(" ");
 		return words;
 	},
+
+  pad(string, length) {
+
+  	if(length <= string.length) {
+  		return string;
+  	}
+
+  	let startPaddingLength = Math.floor((length - string.length)/2);
+
+  	let endPaddingLength = length - string.length - startPaddingLength;
+
+  	let space = ' ';
+
+  	let paddedString = space.repeat(startPaddingLength) + string + space.repeat(endPaddingLength);
+
+  	return paddedString;
+  }
+
+
 
 };
 
