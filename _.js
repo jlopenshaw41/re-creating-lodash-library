@@ -26,6 +26,11 @@ const _ = {
   	return isInRange;
 },
 
+	words(string) {
+		let words = string.split(" ");
+		return words;
+	},
+
 };
 
 
