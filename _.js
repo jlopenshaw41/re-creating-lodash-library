@@ -46,7 +46,29 @@ const _ = {
   	let paddedString = space.repeat(startPaddingLength) + string + space.repeat(endPaddingLength);
 
   	return paddedString;
-  }
+  },
+
+  has(object, key) {
+    let hasValue = object[key];
+    
+    if(hasValue != undefined) {
+      return true;
+    } return false;
+  },
+
+  invert(object) {
+
+    let invertedObject = {};
+
+    for (const property in object) {
+
+      let originalValue = object[property];
+      invertedObject[originalValue] = property;
+    }
+
+    return invertedObject;
+
+  },
 
 
 
