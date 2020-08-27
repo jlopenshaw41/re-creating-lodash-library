@@ -65,7 +65,6 @@ const _ = {
       let originalValue = object[property];
       invertedObject[originalValue] = property;
     }
-
     return invertedObject;
 
   },
