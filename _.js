@@ -69,6 +69,92 @@ const _ = {
 
   },
 
+  findKey(object, predicate) {
+    for (const property in object) {
+      let value = object[property];
+      let predicateReturnValue = predicate(value);
+
+      if(predicateReturnValue) {
+        return property
+      }
+    } return undefined
+
+  },
+
+  drop(array, n) {
+    if (n === undefined) {
+      n = 1;
+    }
+
+    let droppedArray = array.slice(n);
+
+    return droppedArray;
+  },
+
+  dropWhile(array, predicate) {
+
+    const cb = (element, index) => {
+      return !predicate(element, index, array);
+    };
+    let dropNumber = array.findIndex(cb);
+    let droppedArray = this.drop(array, dropNumber);
+    return droppedArray;
+  },
+
+  chunk(array, size=1) {
+
+    let arrayChunks = [];
+
+    for (let i = 0; i < array.length; i += size) {
+      let arrayChunk = array.slice(i, (i + size));
+      arrayChunks.push(arrayChunk);
+    }
+    return arrayChunks
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 };
